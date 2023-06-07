@@ -2,6 +2,6 @@
 
 def is_upper(c):
     if ord(c) >= 65 and ord(c) <= 90:
-        return True
+        print("{}".format(c), end=" ")
     else:
-        return False
+        print("{}\n".format(c), end=" ")
