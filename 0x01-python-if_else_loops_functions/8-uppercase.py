@@ -2,7 +2,9 @@
 
 def uppercase(str):
     for characters in str:
-        if ord(characters) >= 97 or ord(characters) <= 122:
-            converted_str = characters.upper()
-            print("{}".format(converted_str), end= "")
+        if ord('a') <= ord(characters) <= ord('z'):
+            converted_str = chr(ord(characters) - ord('a') + ord('A'))
+            print("{}".format(converted_str), end="")
+        else:
+            print("{}".format(characters), end="")
     print()
