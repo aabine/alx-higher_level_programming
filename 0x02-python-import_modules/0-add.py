@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-# Importing the add function from add_0.py
 if __name__ == "__main__":
+    """print the sum of two integers"""
     from add_0 import add
 
     a = 1
