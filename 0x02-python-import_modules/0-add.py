@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# main.py
 
 # Assigning values to variables a and b
 a = 1
