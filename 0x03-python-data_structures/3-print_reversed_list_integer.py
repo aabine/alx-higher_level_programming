@@ -8,5 +8,6 @@ def print_reversed_list_integer(my_list=[]):
         my_list (list): The list of elements to be
         printed in reverse order.
     """
-    for lists in range(len(my_list) - 1, -1, -1):
-        print("{:d}".format(my_list[lists]))
+    If my_list:
+       for lists in range(len(my_list) - 1, -1, -1):
+           print("{:d}".format(my_list[lists]))
