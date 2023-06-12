@@ -2,7 +2,8 @@
 
 def new_in_list(my_list, idx, element):
     """
-    This function takes a list, an index, and an element as arguments.
+    This function takes a list, an index,
+    and an element as arguments.
     It returns a new list with the element at the specified index.
     The original list is not modified.
     """
