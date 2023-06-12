@@ -14,6 +14,6 @@ def replace_in_list(my_list, idx, element):
         or the original list if the index is invalid.
     """
     if idx < 0 or idx >= len(my_list):
-        return my_list[lists]
+        return my_list
     my_list[idx] = element
     return my_list
