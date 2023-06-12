@@ -15,3 +15,5 @@ def print_matrix_integer(matrix=[[]]):
             for m_el in m_row:
                 print("{}".format(m_el), end=" ")
             print()
+    else:
+        print()
