@@ -14,6 +14,7 @@ Returns:
     a tuple of integers
 """
 
+
 def add_tuple(tuple1=(), tuple2=()):
     # Add two tuples
     padded_tuple1 = tuple1 + (0, 0)
