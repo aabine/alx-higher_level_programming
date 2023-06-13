@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module contains a function that adds two tuples.
 
@@ -13,13 +14,16 @@ Returns:
     a tuple of integers
 """
 
+def add_tuple(tuple1=(), tuple2=()):
+    # Add two tuples
+    padded_tuple1 = tuple1 + (0, 0)
+    padded_tuple2 = tuple2 + (0, 0)
 
-def add_tuple(tuple_a=(), tuple_b=()):
+    # Compute the sum
+    sum_x = padded_tuple1[0] + padded_tuple2[0]
+    sum_y = padded_tuple1[1] + padded_tuple2[1]
 
-    result = ()
-    if len(tuple_a) > 0 and len(tuple_b) > 0:
-        for index in range(len(tuple_a)):
-            val_a = tuple_a[index] if index < len(tuple_a) else 0
-            val_b = tuple_b[index] if index < len(tuple_b) else 0
-            result += (val_a + val_b,)
-    return result
+    # Return the sum
+    sum_tuple = (sum_x, sum_y)
+
+    return sum_tuple
