@@ -8,4 +8,6 @@ def no_c(my_string):
     """
     if my_string:
         n_str = my_string.translate({ord('c'): None, ord('C'): None})
-    return n_str
+        return n_str
+    else:
+        return my_string
