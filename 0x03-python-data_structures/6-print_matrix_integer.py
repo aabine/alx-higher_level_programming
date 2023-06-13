@@ -11,9 +11,9 @@ def print_matrix_integer(matrix=[[]]):
         Nothing
     """
     if matrix:
-        for m_row in matrix:
-            for m_el in m_row:
-                print("{:d}".format(m_el), end=" ")
+        for m_row in range(len(matrix)):
+            for m_el in range(len(matrix[m_row])):
+                print("{:d}".format(matrix[m_row][m_el]), end=" ")
             print()
     else:
         print()
