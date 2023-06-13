@@ -13,7 +13,8 @@ def print_matrix_integer(matrix=[[]]):
     if matrix:
         for m_row in range(len(matrix)):
             for m_el in range(len(matrix[m_row])):
-                print("{:d}".format(matrix[m_row][m_el]), end=" ")
+                print("{:d}".format(matrix[m_row][m_el]),
+                      end=" " if m_el != len(matrix[m_row]) - 1 else "")
             print()
     else:
         print()
