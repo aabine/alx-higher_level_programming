@@ -17,12 +17,9 @@
 """
 
 def delete_at(my_list=[], idx=0):
-    if my_list:
-        if idx < 0 or idx > len(my_list) - 1:
-            return my_list
-        else:
-            n_list = my_list.copy()
-            del n_list[idx]
-            return n_list
-    else:
+    if idx < 0 or idx > len(my_list) - 1:
         return my_list
+    else:
+        n_list = my_list.copy()
+        del n_list[idx]
+    return n_list
