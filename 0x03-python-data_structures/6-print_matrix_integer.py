@@ -2,19 +2,23 @@
 
 def print_matrix_integer(matrix=[[]]):
     """
-    This function prints a matrix of integers.
+    Prints a matrix of integers.
 
     Args:
         matrix: a matrix of integers
 
     Returns:
-        Nothing
+        None
     """
     if matrix:
-        for m_row in range(len(matrix)):
-            for m_el in range(len(matrix[m_row])):
-                print("{:d}".format(matrix[m_row][m_el]),
-                      end=" " if m_el != len(matrix[m_row]) - 1 else "")
+        i = 0
+        while i < len(matrix):
+            j = 0
+            while j < len(matrix[i]):
+                print("{:d}".format(matrix[i][j]),
+                      end=" " if j != len(matrix[i]) - 1 else "")
+                j += 1
             print()
+            i += 1
     else:
         print()
