@@ -7,8 +7,5 @@ def no_c(my_string):
     removed.
     """
     if my_string:
-        n_str = ""
-        for i in range(len(my_string)):
-            if my_string[i] != 'c' and my_string[i] != 'C':
-                n_str += my_string[i]
-        return n_str
+        n_str = my_string.translate({ord('c'): None, ord('C'): None})
+    return n_str
