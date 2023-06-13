@@ -21,4 +21,3 @@ def multiple_returns(sentence):
         return length, first_char
     else:
         return 0, "None"
-    
