@@ -4,10 +4,12 @@ def best_score(a_dictionary):
     """
     Returns the key with the highest value in a dictionary.
     """
-    if not a_dictionary:
-        return None
-    best = None
-    for key in a_dictionary:
-        if best is None or a_dictionary[key] > best:
-            best = a_dictionary[key]
-    return best
+    if a_dictionary:
+        lop_list = list(a_dictionary.keys())
+        best_score = 0
+        str_primary = ''
+        for i in lop_list:
+            if a_dictionary[i] > best_score:
+                best_score = a_dictionary[i]
+                str_primary = i
+        return str_primary

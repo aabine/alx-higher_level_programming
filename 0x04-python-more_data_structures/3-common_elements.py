@@ -6,17 +6,10 @@ def common_elements(set_1, set_2):
         set_1 (set): first set
         set_2 (set): second set
     Returns:
-        set: intersection of set_1 and set_2
+        set: common elements of set_1 and set_2
 
     Examples:
         >>> common_elements({1, 2, 3}, {3, 4, 5})
         {3}
     """
-    result = None
-    for element in set_1:
-        if element in set_2:
-            if result is None:
-                result = {element}
-            else:
-                result = result.intersection({element})
-    return result
+    return set_1.intersection(set_2)

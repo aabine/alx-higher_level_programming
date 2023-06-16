@@ -2,9 +2,10 @@
 
 def simple_delete(a_dictionary, key=""):
     """
-    Deletes the given key in the given dictionary if it exists. If the key is not
-    in the dictionary, the dictionary remains unchanged. If no key is given, the
-    function does nothing. Does not return anything.
+    Deletes the given key in the given dictionary if it exists. I
+    don't check if the key is not
+    in the dictionary, the dictionary remains unchanged.
+    
     
     :param a_dictionary: A dictionary to delete the key from (dict).
     :param key: The key to delete (optional) (Any).

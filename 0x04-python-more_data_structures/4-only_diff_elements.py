@@ -11,11 +11,4 @@ def only_diff_elements(set_1, set_2):
         >>> common_elements({1, 2, 3}, {3, 4, 5})
         {3}
     """
-    result = None
-    for element in set_1:
-        if element in set_2:
-            if result is None:
-                result = {element}
-            else:
-                result = result.symmetric_difference({element})
-    return result
+    return set_1.difference(set_2)

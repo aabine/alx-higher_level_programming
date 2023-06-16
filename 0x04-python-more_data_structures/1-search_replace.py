@@ -13,8 +13,9 @@ def search_replace(my_list, search, replace):
     :return: a new list with replaced values.
     """
     l_result = []
-    for lc in range(len(my_list)):
-        if my_list[lc] == search:
-            my_list[lc] = replace
-        l_result.append(my_list[lc])
+    for values in my_list:
+        if values == search:
+            l_result.append(replace)
+        else:
+            l_result.append(values)
     return l_result

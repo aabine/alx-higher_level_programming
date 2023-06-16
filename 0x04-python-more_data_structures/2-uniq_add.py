@@ -10,11 +10,10 @@ def uniq_add(my_list=[]):
     Returns:
         int: sum of all elements in the list without duplicates.
     """
-
-    if not my_list:
-        return 0
-    
+    listResult = []
     sum_result = 0
     for element in my_list:
-        sum_result += element
+        if element not in listResult:
+            sum_result += element
+            listResult.append(element)
     return sum_result

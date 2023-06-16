@@ -13,6 +13,7 @@ def square_matrix_map(matrix=[]):
     """
     if not matrix:
         return []
-    s_matrix = []
-    s_matrix = list(map(lambda x: list(map(lambda y: y ** 2, x)), matrix))
-    return s_matrix
+    
+    mapped_matrix = []
+    mapped_matrix = [list(map(lambda x: x ** 2, row)) for row in matrix]
+    return mapped_matrix
