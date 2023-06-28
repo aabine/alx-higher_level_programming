@@ -14,14 +14,28 @@ def list_division(my_list_1, my_list_2, list_length):
     results = []
     for index in range(list_length):
         try:
-            if isinstance(my_list_1[index], (int, float)) and isinstance(my_list_2[index], (int, float)):
-                result = my_list_1[index] / my_list_2[index]
-            else:
-                result = 0
+            result = my_list_1[index] / my_list_2[index]
         except ZeroDivisionError:
             result = 0
         except (ValueError, IndexError, AttributeError):
             result = 0
+        except TypeError:
+            result = 0
         finally:
             results.append(result)
     return results
+
+
+list_division = __import__('4-list_division').list_division
+
+my_l_1 = [10, 8, 4]
+my_l_2 = [2, 4, 4]
+result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
+print(result)
+
+print("--")
+
+my_l_1 = [10, 8, 4, 4]
+my_l_2 = [2, 0, "H", 2, 7]
+result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
+print(result)
