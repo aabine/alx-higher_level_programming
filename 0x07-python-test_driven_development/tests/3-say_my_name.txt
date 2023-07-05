@@ -1,0 +1,51 @@
+===========================
+How to Use say_my_name.py
+===========================
+
+This module defines a function ``say_my_name(first_name, last_name="")``
+that prints the name by concatenating the first name and last name.
+
+Function Signature
+==================
+
+``say_my_name(first_name, last_name="")``
+
+Parameters
+----------
+first_name : str
+    The first name of the person.
+last_name : str, optional
+    The last name of the person. Defaults to an empty string.
+
+Raises
+------
+TypeError
+    If the `first_name` or `last_name` is not a string.
+
+Usage Examples
+==============
+
+1. Printing the name with both first and last names:
+
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+2. Printing the name with only the first name:
+
+    >>> say_my_name("Alice")
+    My name is Alice
+
+Handling Errors
+===============
+
+1. If the `first_name` is not a string:
+
+    >>> say_my_name(123, "Doe")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+2. If the `last_name` is not a string:
+
+    >>> say_my_name("John", 456)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string

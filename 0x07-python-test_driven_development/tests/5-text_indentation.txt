@@ -1,0 +1,55 @@
+===========================
+How to Use text_indentation.py
+===========================
+
+This module defines a function ``text_indentation(text)`` that performs text indentation.
+
+Function Signature
+==================
+
+``text_indentation(text)``
+
+Parameters
+----------
+text : str
+    The string to be indented.
+
+Raises
+------
+TypeError
+    If `text` is not a string.
+
+Returns
+-------
+str
+    The indented text.
+
+Usage Examples
+==============
+
+1. Indenting a simple paragraph:
+
+    >>> text = "This is a simple paragraph. It consists of three sentences. They are separated by full stops."
+    >>> text_indentation(text)
+    'This is a simple paragraph.\nIt consists of three sentences.\nThey are separated by full stops.'
+
+2. Indenting a multiline text:
+
+    >>> text = "Hello there.\n How are you?\nI am fine, thanks."
+    >>> text_indentation(text)
+    'Hello there.\nHow are you?\nI am fine, thanks.'
+
+3. Indenting a text with multiple spaces between sentences:
+
+    >>> text = "Hello  there.     How    are   you?"
+    >>> text_indentation(text)
+    'Hello  there.\nHow    are   you?'
+
+Handling Errors
+===============
+
+1. If the input `text` is not a string:
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
