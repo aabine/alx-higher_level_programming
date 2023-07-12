@@ -1,22 +1,26 @@
 #!/usr/bin/python3
 
-""" Class to define a base geometry """
+"""
+Class to define a base geometry
+"""
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+class BaseGeometry:
+    """ define a base geometry """
+    def __init__(self):
+        pass
+
+    def integer_validator(self, name, value):
+        """ validate if value is a positive integer """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
+
 class Rectangle(BaseGeometry):
-    """ 
-    A Class to define a rectangle
-
-    Attributes:
-        width (int): width of the rectangle
-        height (int): height of the rectangle
-
-    Methods:
-        __init__(self, width, height)
-        integer_validator(self, name, value)
-    """
+    """ Class to define a rectangle """
     def __init__(self, width, height):
+        super().__init__()  # Call the parent class initializer
         self.integer_validator("width", width)
-        self.__width = width
         self.integer_validator("height", height)
+        self.__width = width
         self.__height = height
