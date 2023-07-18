@@ -108,7 +108,7 @@ class Rectangle(Base):
         '''
         if args:
             if len(args) > 5:
-                raise TypeError("update() takes at most 5 positional arguments ({} given)".format(len(args)))
+                raise TypeError("update() takes at most 5 positional arguments                                                ({} given)".format(len(args)))
             for i, arg in enumerate(args):
                 if i == 0:
                     if arg is None:
@@ -125,7 +125,9 @@ class Rectangle(Base):
                     self.y = arg
         elif kwargs:
             if len(kwargs) > 5:
-                raise TypeError("update() takes at most 5 named arguments ({} given)".format(len(kwargs)))
+                raise TypeError("update() takes at most 5 named arguments "
+                "({} given)".format(len(kwargs)))
+
             if 'id' in kwargs:
                 if kwargs['id'] is None:
                     self.id = None
