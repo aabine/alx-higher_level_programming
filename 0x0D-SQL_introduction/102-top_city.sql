@@ -3,7 +3,7 @@
 
 SELECT city, MAX(value) AS max_temp
 FROM temperatures
-WHERE MONTH(month_data) IN (7, 8)
+WHERE month BETWEEN 7 AND 8
 GROUP BY city
 ORDER BY max_temp DESC
 LIMIT 3;
