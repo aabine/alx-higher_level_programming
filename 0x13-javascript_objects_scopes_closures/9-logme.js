@@ -1,6 +1,7 @@
 #!/usr/bin/node
-let args = 0;
+let xarg = 0;
+
 exports.logMe = function (item) {
-  console.log(args + ' ' + item);
-  args++;
+  console.log(xarg + ': ' + item);
+  xarg++;
 };
