@@ -3,4 +3,4 @@ class Rectangle {
 
 }
 
-export default Rectangle
+export default Rectangle;
