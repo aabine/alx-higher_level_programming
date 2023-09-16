@@ -7,13 +7,20 @@ where name matches the argument (safe from MySQL injection).
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("""Usage: {} <username> <password> <database>
-             <state_name>""".format(sys.argv[0]))
-        sys.exit(1)
+def display_states(username: str, password: str,
+                     database: str, state_name: str) -> None:
+    """
+    Display all values in the states table where name matches the argument.
 
-    username, password, database, state_name = sys.argv[1:5]
+    Args:
+        username: The username for the database connection.
+        password: The password for the database connection.
+        database: The name of the database.
+        state_name: The name of the state to search for.
+
+    Returns:
+        None
+    """
 
     try:
         db = MySQLdb.connect(
@@ -42,3 +49,12 @@ if __name__ == "__main__":
     finally:
         if db:
             db.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("""Usage: {} <username> <password> <database>
+             <state_name>""".format(sys.argv[0]))
+        sys.exit(1)
+
+    username, password, database, state_name = sys.argv[1:5]
+    display_states(username, password, database, state_name)
