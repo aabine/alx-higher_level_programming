@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Print all states whose names match a provided argument.
-"""
-
+""" Print all states whose names match a provided argument. """
 import MySQLdb
 import sys
 
