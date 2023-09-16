@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 List all cities in a state based on a given
-argument from the database hbtn_0e_4_usa 
+argument from the database hbtn_0e_4_usa
 """
 import MySQLdb
 import sys
