@@ -15,7 +15,6 @@ if __name__ == "__main__":
     username, password, database = sys.argv[1:4]
 
     try:
-        # Construct the connection string with line breaks for improved readability
         connection_string = (
             "mysql+mysqldb://{}:{}@localhost/{}?"
             .format(username, password, database)
