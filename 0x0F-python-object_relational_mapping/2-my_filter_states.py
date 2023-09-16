@@ -2,7 +2,6 @@
 """
 Print all states whose names match a provided argument.
 """
-
 import MySQLdb
 import sys
 
