@@ -13,8 +13,8 @@ if __name__ == "__main__":
             db=sys.argv[3]
         )
         with db.cursor() as cursor:
-            cursor.execute("""SELECT * FROM states WHERE name
-                             LIKE BINARY '{}' ORDER BY states.id""".format(sys.argv[4]))
+            cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
+                            .format(sys.argv[4]))
             rows = cursor.fetchall()
             for row in rows:
                 print(row)
