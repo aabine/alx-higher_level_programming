@@ -38,8 +38,8 @@ if __name__ == "__main__":
             # Fetch and print results
             rows = cursor.fetchall()
             if rows:
-                for row in rows:
-                    print(row)
+                result = ', '.join(row[1] for row in rows)
+                print(result)
             else:
                 print()
     except MySQLdb.Error as e:
