@@ -21,7 +21,10 @@ try:
             new_state = State(name="Louisiana")
             session.add(new_state)
             session.commit()
-            for state in session.query(State).order_by(State.id).all():
+            state = session.query(State).order_by(State.id).first()
+            if state:
                 print("{}".format(state.id))
+            else:
+                print("Nothing")
 except Exception as e:
     print("Error:", e)
