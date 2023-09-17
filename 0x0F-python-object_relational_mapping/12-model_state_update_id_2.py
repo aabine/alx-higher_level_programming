@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" Update a State object from the database hbtn_0e_6_usa using update """
+""" Update a State object from the database hbtn_0e_6_usa """
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine, update)
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -17,9 +17,9 @@ if __name__ == "__main__":
         )
         Base.metadata.create_all(engine)
         with sessionmaker(bind=engine)() as session:
-            update_statement = update(State).values(
-                name="New Mexico").where(State.id == 2)
-            update_statement.execute()
+            new_state = State(id=2, name="New Mexico")
+            session.add(new_state)
+            session.commit()
             state = session.query(State).order_by(State.id.desc()).first()
             print("{}".format(state.id))
     except Exception as e:
