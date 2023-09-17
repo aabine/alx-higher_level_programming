@@ -22,8 +22,5 @@ if __name__ == "__main__":
             session.query(State).filter(State.id == 2).update(
                 {"name": "New Mexico"}
             )
-            state = session.query(State).order_by(
-                State.id.desc(), State.name).all()
-            print("{}: {}".format(state.id, state.name))
     except Exception as e:
         print("Error:", e)
