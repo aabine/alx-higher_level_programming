@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-""" Update a State object from the database hbtn_0e_6_usa """
+""" Update a State object from the database hbtn_0e_6_usa using update """
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine, update
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
-        username, password, database = sys.argv[1:4]
+
+    username, password, database = sys.argv[1:4]
+
     try:
         engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost/{}'
@@ -17,10 +19,11 @@ if __name__ == "__main__":
         )
         Base.metadata.create_all(engine)
         with sessionmaker(bind=engine)() as session:
-            new_state = State(id=2, name="New Mexico")
-            session.add(new_state)
-            session.commit()
-            state = session.query(State).order_by(State.id.desc()).first()
-            print("{}".format(state.id))
+            session.query(State).filter(State.id == 2).update(
+                {"name": "New Mexico"}
+            )
+            state = session.query(State).order_by(
+                State.id.desc(), State.name).all()
+            print("{}: {}".format(state.id, state.name))
     except Exception as e:
         print("Error:", e)
