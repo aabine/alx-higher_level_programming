@@ -22,9 +22,6 @@ try:
             session.add(new_state)
             session.commit()
             state = session.query(State).order_by(State.id).first()
-            if state:
-                print("{}".format(state.id))
-            else:
-                print("Nothing")
+            print("{}".format(state.id))
 except Exception as e:
     print("Error:", e)
