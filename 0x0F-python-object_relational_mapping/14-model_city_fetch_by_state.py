@@ -4,7 +4,7 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_city import Base, City
-from model_state import State
+from model_state import Base, State
 
 if __name__ == "__main__":
     try:
