@@ -29,8 +29,8 @@ if __name__ == "__main__":
     # Use the session as a context manager to ensure it's properly closed
     with sessionmaker(bind=engine)() as session:
         # Fetch all states and cities in a single query
-        states = session.query(State).options(joinedload(
-            State.cities)).order_by(State.id).all()
+        states = session.query(State).options(joinedload(State.cities))
+        states = states.order_by(State.id).all()
 
         for state in states:
             print(state.id, state.name, sep=": ")
