@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Prints the State object with the name passed as an argument from the database """
+""" Prints the State object with the name
+passed as an argument from the database """
 import sys
 from relationship_state import Base, State
 from relationship_city import City
@@ -9,7 +10,9 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == "__main__":
     try:
         if len(sys.argv) != 4:
-            print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+            print(
+                "Usage: {} <username> <password> <database>"
+                .format(sys.argv[0]))
             sys.exit(1)
 
         username, password, database = sys.argv[1:4]
