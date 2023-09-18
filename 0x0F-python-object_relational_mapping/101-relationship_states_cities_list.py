@@ -1,40 +1,22 @@
 #!/usr/bin/python3
-"""
-Prints the State object with the name
-passed as an argument from the database
+""" prints the State object with the name passed as argument from the database
 """
 import sys
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import joinedload
+from sqlalchemy.orm import relationship
+
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print(
-            "Usage: {} <username> <password> <database>"
-            .format(sys.argv[0]))
-        sys.exit(1)
-
-    username, password, database = sys.argv[1:4]
-
-    engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-            username, password, database
-        )
-    )
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Base.metadata.create_all(engine)
-
-    # Use the session as a context manager to ensure it's properly closed
-    with sessionmaker(bind=engine)() as session:
-        # Fetch all states and cities in a single query
-        states = session.query(State).options(joinedload(State.cities))
-        states = states.order_by(State.id).all()
-
-        for state in states:
-            print(state.id, state.name, sep=": ")
-            for city in state.cities:
-                print("    ", end="")
-                print(city.id, city.name, sep=": ")
-            print()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for instance in session.query(State).order_by(State.id):
+        print(instance.id, instance.name, sep=": ")
+        for city_ins in instance.cities:
+            print("    ", end="")
+            print(city_ins.id, city_ins.name, sep=": ")
