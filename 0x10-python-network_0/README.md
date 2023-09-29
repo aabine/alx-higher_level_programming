@@ -2,13 +2,9 @@ Author: Austine Abine
 
 # Python - Network #0
 
-In this networking project, I used `curl` in Bash scripts to send various types
-of HTTP headers. During this process, I gained insights into how URLs work, domain names,
-the many different HTTP request/response header fields and status codes, and
-how to work with cookies.
+In the course of this networking project, I leveraged the 'curl' utility within Bash scripts to dispatch a diverse array of HTTP headers. Throughout this endeavor, I acquired valuable insights into the intricate workings of URLs, domain naming conventions, the multifaceted landscape of HTTP request and response header fields, status codes, as well as proficient techniques for managing cookies.
 
-Task six was an algorithmic challenge separate from the overall project theme
-completed in Python.
+Additionally, it is noteworthy that Task six represented a distinct algorithmic challenge, distinct from the overarching project theme, and was successfully implemented using the Python programming language.
 
 ## Tasks :page_with_curl:
 
