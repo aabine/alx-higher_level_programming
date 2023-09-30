@@ -1,7 +1,3 @@
 #!/bin/bash
-# Define the URL and header variable
-URL="$1"
-HEADER="X-School-User-Id: 98"
-
-# Send the GET request with the specified header using curl and display the response body
-curl -s -H "$HEADER" "$URL"
+# Send a GET request to the specified URL with a custom header variable.
+curl -sH "X-HolbertonSchool-User-Id: 98" "${1}"
