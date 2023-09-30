@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" A function that finds the peak element in a list of integers """
 def find_peak(list_of_integers):
     """
     Finds the peak element in a given list of integers.
