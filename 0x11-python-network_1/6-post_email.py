@@ -1,27 +1,22 @@
 #!/usr/bin/python3
-"""
-A script that takes a URL and EMAIL from
-The command line and displays the content 
-"""
-
 import sys
 import requests
-import requests.exceptions
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: ./0-hbtn_header.py <URL> <EMAIL>")
-        sys.exit(1)
-    data = {
-        "URL": sys.argv[1],
-        "EMAIL": sys.argv[2]
-    }
-    if not data["URL"].startswith("https://" or data["URL"].endswith("/")):
-        data["URL"] = "https://" + data["URL"] + "/"
+    # Get the URL and email from command-line arguments
+    URL = sys.argv[1]
+    EMAIL = sys.argv[2]
+
+    # Create a dictionary with the email as a parameter
+    data = {'email': EMAIL}
+
     try:
-        response = requests.post(data["URL"], data=data, timeout=10)
+        # Send a POST request to the URL with the email data
+        response = requests.post(URL, data=data, timeout=10)
         response.raise_for_status()
-        with response:
-            print(response.headers.get('X-Request-Id'))
+
+        # Display the body of the response
+        print(response.text)
     except requests.exceptions.RequestException as e:
+        # Print the exception if there is an error in the request
         print(f"Exception: {e}")
