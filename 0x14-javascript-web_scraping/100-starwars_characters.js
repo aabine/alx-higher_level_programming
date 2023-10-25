@@ -2,6 +2,12 @@
 
 const request = require('request');
 
+/**
+ * Makes a GET request to the specified URL using the request library.
+ *
+ * @param {string} url - The URL to make the GET request to.
+ * @return {Promise} A promise that resolves with the response body if the request is successful, or rejects with an error if the request fails.
+ */
 function getRequest (url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
