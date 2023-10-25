@@ -3,19 +3,24 @@
 const req = require('request');
 const id = process.argv[2];
 const url = 'https://swapi-api.hbtn.io/api/films/';
+
+async function getCharacterNames(urls) {
+  const responses = await Promise.all(urls.map(url => req.get(url)));
+  const characterNames = responses.map(response => {
+    const data = JSON.parse(response.body);
+    return data.name;
+  });
+  return characterNames;
+}
+
 req.get(url + id, function (error, res, body) {
   if (error) {
     console.log(error);
+    return;
   }
   const data = JSON.parse(body);
-  const dd = data.characters;
-  for (const i of dd) {
-    req.get(i, function (error, res, body1) {
-      if (error) {
-        console.log(error);
-      }
-      const data1 = JSON.parse(body1);
-      console.log(data1.name);
-    });
-  }
+  const characterUrls = data.characters;
+  getCharacterNames(characterUrls).then(characterNames => {
+    characterNames.forEach(name => console.log(name));
+  });
 });
